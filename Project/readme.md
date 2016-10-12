@@ -1,29 +1,29 @@
-# electron-boilerplate
+# app
 
-> Boilerplate to kickstart creating an app with [Electron](https://github.com/atom/electron)
-
-*See [awesome-electron](https://github.com/sindresorhus/awesome-electron) for more useful Electron resources.*
-
----
-
-<p align="center"><b>⚛ Learn React in just a couple of afternoons with this awesome <a href="https://ReactForBeginners.com/friend/AWESOME">React course</a> by Wes Bos</b></p>
-
----
+> My superb app
 
 
-## Getting started
-
-In your directory, run:
+## Dev
 
 ```
-$ curl -fsSL https://github.com/sindresorhus/electron-boilerplate/archive/master.tar.gz | tar -xz --strip-components 2
+$ npm install
 ```
 
-You can also `git clone` or [download](https://github.com/sindresorhus/electron-boilerplate/archive/master.zip) this repo and get contents of the `boilerplate` folder.
+### Run
 
-There's also a [Yeoman generator](https://github.com/sindresorhus/generator-electron).
+```
+$ npm start
+```
+
+### Build
+
+```
+$ npm run build
+```
+
+Builds the app for macOS, Linux, and Windows, using [electron-packager](https://github.com/electron-userland/electron-packager).
 
 
 ## License
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+MIT © [<%= name %>](<%= website %>)
