@@ -22,3 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('platform-info').innerHTML = os.platform();
     document.getElementById('env-name').innerHTML = env.name;
 });
+
+var Core = function() {
+    var loadWidgets = function() {
+        Log.log("Loading Widgets");
+    };
+    var loadWidget = function() {
+        Log.log("Loading Widget");
+    };
+
+};
+
+module.exports = new Core();
