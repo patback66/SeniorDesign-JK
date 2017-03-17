@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartMirror Settings</title>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="close">Close</div>
+<div id="settings-screen" class="container-fluid">
+  <div class="row">
+      <div class="col-xs-12">
+        <h2>Settings></h2>
+
+        <p>Widget Alignment Settings</p>
+          <p>
+            <select class="widget-select" id="top-left-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="top-left-select">Top Left</label>
+          </p>
+          <p>
+            <select class="widget-select" id="top-center-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="top-center-select">Top Center</label>
+          </p>
+          <p>
+            <select class="widget-select" id="top-right-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="top-right-select">Top Right</label>
+          </p>
+
+          <p>
+            <select class="widget-select" id="middle-left-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="middle-left-select">Middle Left</label>
+          </p>
+          <p>
+            <select class="widget-select" id="middle-center-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="middle-center-select">Middle Center</label>
+          </p>
+          <p>
+            <select class="widget-select" id="middle-right-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="middle-right-select">Middle Right</label>
+          </p>
+
+          <p>
+            <select class="widget-select" id="bottom-left-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="bottom-left-select">Bottom Left</label>
+          </p>
+          <p>
+            <select class="widget-select" id="bottom-middle-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="bottom-middle-select">Bottom Middle</label>
+          </p>
+          <p>
+            <select class="widget-select" id="bottom-right-select">
+              <option>None</option>
+              <option>Clock</option>
+            </select>
+            <label for="bottom-right-select">Bottom Right</label>
+          </p>
+        <p>Color Settings</p>
+          <p>
+            <input type="text" class="form-control" id="background-color">
+            <label for="background-color">Background Color:</label>
+          </p>
+          <p>
+            <input type="text" class="form-control" id="text-color">
+            <label for="text-color">Text Color:</label>
+          </p>
+      </div>
+  </div>
+</div>
+<script src="settings.js"></script>
+</body>
+</html>
