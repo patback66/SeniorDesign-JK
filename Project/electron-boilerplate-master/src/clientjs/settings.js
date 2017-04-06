@@ -1,18 +1,19 @@
 'use strict';
 
 var ipc = require('ipc');
+//var ipc = nodeRequire('ipc');
 var configuration = require('../configuration');
 
-var modifierCheckboxes = document.querySelectorAll('.global-shortcut');
+var selectBoxes = document.querySelectorAll('.widget-placement');
 var closeEl = document.querySelector('.close');
 
 closeEl.addEventListener('click', function (e) {
     ipc.send('close-settings-window');
 });
 
-for (var i = 0; i < modifierCheckboxes.length; i++) {
-    var shortcutKeys = configuration.readSettings('shortcutKeys');
-    var modifierKey = modifierCheckboxes[i].attributes['data-modifier-key'].value;
+for (var i = 0; i < selectBoxes.length; i++) {
+    var location = configuration.readSettings('widget-placement');
+    var widgetName = modifierCheckboxes[i].attributes['selected'].value;
     modifierCheckboxes[i].checked = shortcutKeys.indexOf(modifierKey) !== -1;
 
     modifierCheckboxes[i].addEventListener('click', function (e) {
@@ -20,8 +21,8 @@ for (var i = 0; i < modifierCheckboxes.length; i++) {
     });
 }
 
-function bindModifierCheckboxes(e) {
-    var shortcutKeys = configuration.readSettings('shortcutKeys');
+function bindSelectBoxes(e) {
+    var shortcutKeys = configuration.readSettings('widget-placement');
     var modifierKey = e.target.attributes['data-modifier-key'].value;
 
     if (shortcutKeys.indexOf(modifierKey) !== -1) {
@@ -33,5 +34,5 @@ function bindModifierCheckboxes(e) {
     }
 
     configuration.saveSettings('shortcutKeys', shortcutKeys);
-    ipc.send('set-global-shortcuts');
+    ipc.send('set-widget-placement');
 }
