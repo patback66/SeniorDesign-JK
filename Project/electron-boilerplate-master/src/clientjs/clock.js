@@ -32,7 +32,7 @@ export class Clock extends Widget {
     //var temp = text2.insertRow(0);
     //temp.innerHTML = datetime;
     //var temp = document.getElementById("text1");
-    var temp = document.getElementById(location);
+    var temp = document.getElementById(this.location);
 
     //document.getElementById("text1").innerHTML = datetime;
     temp.innerHTML = datetime;

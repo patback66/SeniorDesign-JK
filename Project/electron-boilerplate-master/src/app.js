@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (var i = 0; i < widgets.length; i++) {
         //widgets[i].setup("region-top-center");
-        widgets[i].setup(region-top-center);
+        widgets[i].setup("region-top-center");
         setInterval(widgets[i].loop(),widgets[i].refresh);
         //updater.push(t) ; //should have widgets.refresh
     }
