@@ -25,16 +25,17 @@ var appDir = jetpack.cwd(app.getAppPath());
 console.log('The author of this app is:', appDir.read('package.json', 'json').author);
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('greet').innerHTML = greet();
+    /*document.getElementById('greet').innerHTML = greet();
     document.getElementById('platform-info').innerHTML = os.platform();
-    document.getElementById('env-name').innerHTML = env.name;
+    document.getElementById('env-name').innerHTML = env.name;*/
     //load widgets into config
     widgets.push(new Clock());
     //load all widgets
 
     for (var i = 0; i < widgets.length; i++) {
         //widgets[i].setup("region-top-center");
-        setInterval(widgets[i].setup("region-top-center"),widgets[i].getRefresh());
+        widgets[i].setup(region-top-center);
+        setInterval(widgets[i].loop(),widgets[i].refresh);
         //updater.push(t) ; //should have widgets.refresh
     }
 });

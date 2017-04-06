@@ -1,54 +1,9 @@
-/*module.exports = function widget(){
-
-  var isfull;
-  var name = "hello_world";
-  var myWindow;
-
-  this.setup = function(){
-    return "hi";
-  }
-
-  this.getname = function(){
-    return name;
-  }
-
-  //remember to close else you have 3 million pages open
-  this.close = function(){
-    isfull = false;
-    myWindow.close();
-    return "bye";
-  }
-
-  this.getdata = function(){
-
-  }
-
-  this.location = function(){
-    var location = document.getElementById(name);
-    return location;
-  }
-
-  this.display = function(){
-    if(isfull){
-      return "fullscreen";
-    }
-    else {
-      return "minimized";
-    }
-  }
-
-  this.open = function(){
-    //window.location = "http://www.google.com"
-
-    //here i am opening a new window each time you fullscreen something. is that good? probably not in the long run
-    myWindow = window.open("hello_world.html");
-
-    //window.location is an alternative
-    //window.location.assign("hello_world.html");
-    isfull = true;
-  }
-};*/
-
+/*
+ * @class Widget
+ * Widget provides functionality for an html widget.
+ *
+ *
+ */
 export class Widget {
   constructor() {
     this.isfull = false;
@@ -58,8 +13,21 @@ export class Widget {
     this.refresh = 500;
   }
 
+  /*
+   * Setup is called once at the instantiation. Use for code that must run after
+   * the constructor but before the main loop.
+   */
   setup(location){
     return "hi";
+  }
+
+  /*
+   * Loop is called periodically based on the refresh. Updates to the widget
+   * should be performed here.
+   *
+   */
+  loop() {
+
   }
 
   getname(){
