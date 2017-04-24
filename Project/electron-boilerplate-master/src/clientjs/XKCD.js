@@ -14,7 +14,7 @@ var request = require('request')
 //var feedparser = new FeedParser([options]);
 
 
-class XKCD extends Widget {
+export class XKCD extends Widget {
   constructor() {
     super();
     this.isfull = false;
