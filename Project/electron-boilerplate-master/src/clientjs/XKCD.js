@@ -1,13 +1,10 @@
 //var widget = require(__dirname + '/clientjs/widget.js');
 import { Widget } from './widget.js';
-//export var clock = new widget();
-var RSSFeedParser = require('feedparser');
+//var RSSFeedParser = require('feedparser');
 var request = require('request')
   , FeedParser = require(__dirname+'/..')
   , Iconv = require('iconv').Iconv
   , zlib = require('zlib');
-var RSSreq = request('https://xkcd.com/rss.xml')
-var feedparser = new FeedParser([options]);
 
 
 class XKCD extends Widget {
