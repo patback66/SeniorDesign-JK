@@ -1,10 +1,17 @@
 //var widget = require(__dirname + '/clientjs/widget.js');
 import { Widget } from './widget.js';
+//export var clock = new widget();
 //var RSSFeedParser = require('feedparser');
+import request from 'node-feedparser';
+import Feedparser from 'node-feedparser';
+
+/*
 var request = require('request')
   , FeedParser = require(__dirname+'/..')
   , Iconv = require('iconv').Iconv
-  , zlib = require('zlib');
+  , zlib = require('zlib');*/
+//var RSSreq = request('https://xkcd.com/rss.xml');
+//var feedparser = new FeedParser([options]);
 
 
 class XKCD extends Widget {
@@ -39,8 +46,8 @@ class XKCD extends Widget {
       if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));
       var encoding = res.headers['content-encoding'] || 'identity'
         , charset = getParams(res.headers['content-type'] || '').charset;
-      res = maybeDecompress(res, encoding);
-      res = maybeTranslate(res, charset);
+      //res = maybeDecompress(res, encoding);
+      //res = maybeTranslate(res, charset);
       res.pipe(feedparser);
     });
 
@@ -53,7 +60,7 @@ class XKCD extends Widget {
       }
     });
     }
-
+/*
     //If you need to decompress
     function maybeDecompress (res, encoding) {
       var decompress;
@@ -83,7 +90,7 @@ class XKCD extends Widget {
       }
       return res;
     }
-
+*/
     function getParams(str) {
       var params = str.split(';').reduce(function (params, param) {
         var parts = param.split('=').map(function (part) { return part.trim(); });
