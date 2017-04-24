@@ -29,7 +29,7 @@ class XKCD extends Widget {
     this.location = location;
   }
 
-  function fetch(feed) {
+  fetch(feed) {
     // Define our streams
     var req = request(feed, {timeout: 10000, pool: false});
     req.setMaxListeners(50);
@@ -91,7 +91,7 @@ class XKCD extends Widget {
       return res;
     }
 */
-    function getParams(str) {
+    getParams(str) {
       var params = str.split(';').reduce(function (params, param) {
         var parts = param.split('=').map(function (part) { return part.trim(); });
         if (parts.length === 2) {
@@ -102,7 +102,7 @@ class XKCD extends Widget {
       return params;
     }
 
-    function done(err) {
+    done(err) {
       if (err) {
         console.log(err, err.stack);
         return process.exit(1);
