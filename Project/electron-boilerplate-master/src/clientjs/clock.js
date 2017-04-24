@@ -36,7 +36,9 @@ export class Clock extends Widget {
     var temp = document.getElementById(this.location);
 
     //document.getElementById("text1").innerHTML = datetime;
+    var style ="font-size: xx-large;";
     temp.innerHTML = datetime;
+    temp.style.cssText = style
     //var t = setTimeout(this.setup(location),500);
     function addzero(i){
       if (i < 10) {i="0"+i;}
