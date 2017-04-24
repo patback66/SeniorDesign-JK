@@ -10,7 +10,7 @@ export class Widget {
     this.name = "hello_world";
     this.myWindow;
     this.location;
-    this.refresh = 500;
+    this.refresh = 500; //refresh time in millis
   }
 
   /*
@@ -27,7 +27,7 @@ export class Widget {
    *
    */
   loop() {
-
+    console.log("loop called");
   }
 
   getname(){

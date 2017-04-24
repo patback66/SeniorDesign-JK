@@ -14,6 +14,7 @@ import { Clock } from './clientjs/clock.js';
 
 var widgets = [];
 var updater = [];
+var refRate = 500;
 
 console.log('Loaded environment variables:', env);
 
@@ -30,16 +31,26 @@ document.addEventListener('DOMContentLoaded', function () {
     //document.getElementById('env-name').innerHTML = env.name;
     //load widgets into config
     widgets.push(new Clock());
+    widgets[0].location="region-top-center";
     //load all widgets
 
     for (var i = 0; i < widgets.length; i++) {
         //widgets[i].setup("region-top-center");
         widgets[i].setup("region-top-center");
-        setInterval(widgets[i].loop(),widgets[i].refresh);
+        if(widgets[i].refresh < refRate) {
+            refRate = widgets[i].refresh
+        }
+        console.log(widgets[i]);
+
         //updater.push(t) ; //should have widgets.refresh
     }
+    var update = setInterval(doRefresh,refRate);
+    updater.push(update);
+    console.log(updater);
 });
 
 function doRefresh() {
-
+    for(var i = 0; i < widgets.length; i++) {
+        widgets[i].loop();
+    }
 }
