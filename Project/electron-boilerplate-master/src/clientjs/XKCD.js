@@ -30,6 +30,7 @@ export class XKCD extends Widget {
   }
 
   fetch(feed) {
+    savedLocation = this.location;
     // Define our streams
     var req = request(feed, {timeout: 10000, pool: false});
     req.setMaxListeners(50);
@@ -54,10 +55,15 @@ export class XKCD extends Widget {
     feedparser.on('error', done);
     feedparser.on('end', done);
     feedparser.on('readable', function() {
-      var post;
-      while (post = this.read()) {
-        console.log(post);
-      }
+      var stream = this, item;
+      /*while (item = stream.read()) {
+        console.log('Got article: %s', item.title || item.description);
+      }*/
+      item = stream.read();
+      var temp = document.getElementById(savedLocation);
+
+      //document.getElementById("text1").innerHTML = datetime;
+      temp.innerHTML = item.description;
     });
     }
 /*
