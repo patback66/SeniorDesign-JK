@@ -14,7 +14,7 @@ class XKCD extends Widget {
     this.name = "XKCD";
     this.location = null;
     this.myWindow = null;
-    this.refresh = 500;
+    this.refresh = 86400000;
   }
 
   setup(location){
