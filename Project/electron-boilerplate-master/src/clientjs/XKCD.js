@@ -2,8 +2,8 @@
 import { Widget } from './widget.js';
 //export var clock = new widget();
 //var RSSFeedParser = require('feedparser');
-import request from 'node-feedparser';
-import Feedparser from 'node-feedparser';
+import request from 'request';
+import FeedParser from 'node-feedparser';
 
 /*
 var request = require('request')
