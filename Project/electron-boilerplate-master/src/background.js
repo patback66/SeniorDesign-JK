@@ -5,16 +5,47 @@
 
 import path from 'path';
 import url from 'url';
-import { app, Menu } from 'electron';
+import { app, Menu, ipcMain, BrowserWindow } from 'electron';
 import { devMenuTemplate } from './menu/dev_menu_template';
 import { editMenuTemplate } from './menu/edit_menu_template';
 import createWindow from './helpers/window';
+
 
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
 import env from './env';
 
 var mainWindow;
+var settingsWindow;
+
+ipcMain.on('open-settings-window', function () {
+    if (settingsWindow) {
+        return;
+    }
+
+    var settingsWindow = createWindow( 'settings', {
+        frame: true,
+        resizable: true,
+    });
+
+    //settingsWindow.loadUrl('file://' + __dirname + '/app/settings.html');
+    settingsWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'settings.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+
+    settingsWindow.on('closed', function () {
+        settingsWindow = null;
+    });
+});
+
+ipcMain.on('close-settings-window', function () {
+    if (settingsWindow) {
+        settingsWindow.close();
+    }
+});
+
 
 var setApplicationMenu = function () {
     var menus = [editMenuTemplate];

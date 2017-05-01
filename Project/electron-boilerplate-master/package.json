@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "fs-jetpack": "^0.10.2",
-    "node-feedparser":"^1.0.1"
+    "node-feedparser":"^1.0.1",
+    "request":"^2.81.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

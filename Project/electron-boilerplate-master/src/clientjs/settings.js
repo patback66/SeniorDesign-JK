@@ -1,6 +1,6 @@
 'use strict';
 
-var ipc = require('ipc');
+import { remote, ipcRenderer } from 'electron';
 //var ipc = nodeRequire('ipc');
 var configuration = require('../configuration');
 
@@ -8,7 +8,7 @@ var selectBoxes = document.querySelectorAll('.widget-placement');
 var closeEl = document.querySelector('.close');
 
 closeEl.addEventListener('click', function (e) {
-    ipc.send('close-settings-window');
+    ipcRenderer.send('close-settings-window');
 });
 
 for (var i = 0; i < selectBoxes.length; i++) {
@@ -34,5 +34,5 @@ function bindSelectBoxes(e) {
     }
 
     configuration.saveSettings('shortcutKeys', shortcutKeys);
-    ipc.send('set-widget-placement');
+    ipcRenderer.send('set-widget-placement');
 }

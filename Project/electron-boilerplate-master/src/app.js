@@ -3,20 +3,30 @@
 
 // Use new ES6 modules syntax for everything.
 import os from 'os'; // native node.js module
-import { remote } from 'electron'; // native electron module
+import { remote, ipcRenderer } from 'electron'; // native electron module
 import jetpack from 'fs-jetpack'; // module loaded from npm
 import { greet } from './hello_world/hello_world'; // code authored by you in this project
 import env from './env';
 import { Widget } from './clientjs/widget.js';
 //var widget = require('./clientjs/widget.js');
 import { Clock } from './clientjs/clock.js';
+//import { XKCD } from './clientjs/XKCD.js';
+import { Quotes } from './clientjs/quotes.js';
 //var clockWidget = require(__dirname + '/clientjs/clock.js');
+
 
 var widgets = [];
 var updater = [];
+var locations = [];
 var minRate = 500;
 var maxRate = 500;
 var curRefresh = 0;
+
+var settingsWindow = null;
+var settingsEl = document.querySelector('.settings');
+settingsEl.addEventListener('click', function () {
+    ipcRenderer.send('open-settings-window');
+});
 
 console.log('Loaded environment variables:', env);
 
@@ -33,12 +43,17 @@ document.addEventListener('DOMContentLoaded', function () {
     //document.getElementById('env-name').innerHTML = env.name;
     //load widgets into config
     widgets.push(new Clock());
-    widgets[0].location="region-top-center";
+    locations.push("region-top-center");
+    //widgets.push(new XKCD());
+    locations.push("region-middle-center");
+    widgets.push(new Quotes());
+    locations.push("region-bottom-center");
     //load all widgets
 
     for (var i = 0; i < widgets.length; i++) {
         //widgets[i].setup("region-top-center");
-        widgets[i].setup("region-top-center");
+        widgets[i].setup(locations[i]);
+        doRefresh(i);
         setInterval(doRefresh.bind(null, i), widgets[i].refresh)
         console.log(widgets[i]);
         //updater.push(t) ; //should have widgets.refresh
