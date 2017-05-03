@@ -43,18 +43,19 @@ document.addEventListener('DOMContentLoaded', function () {
     //document.getElementById('env-name').innerHTML = env.name;
     //load widgets into config
     widgets.push(new Clock());
-    locations.push("region-top-center");
+    //locations.push("region-top-center");
+    locations["clock"]="region-top-center";
     //widgets.push(new XKCD());
-    locations.push("region-middle-center");
+    //locations.push("region-middle-center");
     widgets.push(new Quotes());
-    locations.push("region-bottom-center");
-    //load all widgets
+    locations["quotes"]="region-bottom-center";
+    //locations.push("region-bottom-center");
 
     for (var i = 0; i < widgets.length; i++) {
         //widgets[i].setup("region-top-center");
-        widgets[i].setup(locations[i]);
+        widgets[i].setup(locations[widgets[i].name]);
         doRefresh(i);
-        setInterval(doRefresh.bind(null, i), widgets[i].refresh)
+        setInterval(doRefresh.bind(null, i), widgets[i].refresh);
         console.log(widgets[i]);
         //updater.push(t) ; //should have widgets.refresh
     }
@@ -66,3 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function doRefresh(index) {
     widgets[index].loop();
 }
+
+ipcRenderer.on("receive-settings", (event, arg) => {
+    //update widget locations
+});
