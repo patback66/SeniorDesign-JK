@@ -26,6 +26,8 @@ export class Clock extends Widget {
     var m = currentdate.getMinutes();
     var s = currentdate.getSeconds();
     h = h%12;
+    if(h==0)
+      h=12;
     m = addzero(m);
     s = addzero(s);
     datetime = datetime + h + ":" + m + ":" + s;
