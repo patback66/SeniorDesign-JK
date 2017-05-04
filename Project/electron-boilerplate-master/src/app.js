@@ -11,6 +11,7 @@ import { Widget } from './clientjs/widget.js';
 //var widget = require('./clientjs/widget.js');
 import { Clock } from './clientjs/clock.js';
 //import { XKCD } from './clientjs/XKCD.js';
+import { Weather } from './
 import { Quotes } from './clientjs/quotes.js';
 //var clockWidget = require(__dirname + '/clientjs/clock.js');
 
@@ -50,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
     //locations.push("region-top-center");
     locations["clock"]="region-top-center";
     //widgets.push(new XKCD());
+    widgets.push(new Weather());
+    locations["weather"]="region-top-right";
     //locations.push("region-middle-center");
     widgets.push(new Quotes());
     locations["quotes"]="region-bottom-center";
