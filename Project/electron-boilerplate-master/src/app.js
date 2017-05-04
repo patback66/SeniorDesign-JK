@@ -11,7 +11,7 @@ import { Widget } from './clientjs/widget.js';
 //var widget = require('./clientjs/widget.js');
 import { Clock } from './clientjs/clock.js';
 //import { XKCD } from './clientjs/XKCD.js';
-import { Weather } from './
+import { Weather } from './clientjs/weather.js';
 import { Quotes } from './clientjs/quotes.js';
 //var clockWidget = require(__dirname + '/clientjs/clock.js');
 
