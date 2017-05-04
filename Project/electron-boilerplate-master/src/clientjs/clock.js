@@ -21,16 +21,22 @@ export class Clock extends Widget {
     //var element = document.getElementById(location);
     console.log("clock loop called");
     var currentdate = new Date();
-    var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear() + " @ ";
+    var datetime = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear() + " \n ";
     var h = currentdate.getHours();
     var m = currentdate.getMinutes();
     var s = currentdate.getSeconds();
+    var amPm;
+    if(h >= 12) {
+      amPm = " PM";
+    } else {
+      amPm = " AM"
+    }
     h = h%12;
     if(h==0)
       h=12;
     m = addzero(m);
     s = addzero(s);
-    datetime = datetime + h + ":" + m + ":" + s;
+    datetime = datetime + h + ":" + m + ":" + s + amPm;
     //$(text2).empty();
     //var temp = text2.insertRow(0);
     //temp.innerHTML = datetime;

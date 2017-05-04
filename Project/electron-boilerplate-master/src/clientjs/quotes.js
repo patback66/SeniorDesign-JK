@@ -9,7 +9,7 @@ export class Quotes extends Widget {
   constructor() {
     super();
     this.isfull = false;
-    this.name = "hello_world";
+    this.name = "quotes";
     this.myWindow;
     this.location;
     this.refresh = 50000; //refresh time in millis

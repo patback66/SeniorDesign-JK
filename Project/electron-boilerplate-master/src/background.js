@@ -9,7 +9,8 @@ import { app, Menu, ipcMain, BrowserWindow } from 'electron';
 import { devMenuTemplate } from './menu/dev_menu_template';
 import { editMenuTemplate } from './menu/edit_menu_template';
 import createWindow from './helpers/window';
-
+import './clientjs/configuration.js';
+import os from 'os';
 
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
@@ -23,7 +24,7 @@ ipcMain.on('open-settings-window', function () {
         return;
     }
 
-    var settingsWindow = createWindow( 'settings', {
+    settingsWindow = createWindow( 'settings', {
         frame: true,
         resizable: true,
     });
@@ -35,13 +36,14 @@ ipcMain.on('open-settings-window', function () {
         slashes: true
     }));
 
-    settingsWindow.on('closed', function () {
+    settingsWindow.on('close', function () {
         settingsWindow = null;
     });
 });
 
 ipcMain.on('close-settings-window', function () {
-    if (settingsWindow) {
+    console.log("[DEBUG] Closing settings");
+    if (settingsWindow != null) {
         settingsWindow.close();
     }
 });
