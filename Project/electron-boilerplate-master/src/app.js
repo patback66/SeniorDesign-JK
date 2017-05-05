@@ -10,6 +10,8 @@ import env from './env';
 import fs from 'fs';
 import './clientjs/configuration.js';
 import { Widget } from './clientjs/widget.js';
+import { RSS } from './clientjs/XKCD.js';
+import { Weather } from './clientjs/weather.js';
 import { Quotes } from './clientjs/quotes.js';
 import { Clock } from './clientjs/clock.js';
 var widgets = [];
@@ -20,10 +22,14 @@ function loadWidgets() {
   //Load Widgets here
   widgets.push(new Clock());
   widgets.push(new Quotes());
+  widgets.push(new RSS());
+  widgets.push(new Weather());
 
   //default locations until configuration is working
   locations["clock"]="region-top-center";
   locations["quotes"]="region-bottom-center";
+  locations["weather"]="region-top-right";
+  locations["RSS"]="region-middle-center";
 
   //build widget name list for ipc passing
   for (var i = 0; i < widgets.length; i++) {
