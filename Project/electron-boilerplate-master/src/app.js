@@ -7,21 +7,40 @@ import { remote, ipcRenderer } from 'electron'; // native electron module
 import jetpack from 'fs-jetpack'; // module loaded from npm
 import { greet } from './hello_world/hello_world'; // code authored by you in this project
 import env from './env';
-import { Widget } from './clientjs/widget.js';
-//var widget = require('./clientjs/widget.js');
-import { Clock } from './clientjs/clock.js';
-//import { XKCD } from './clientjs/XKCD.js';
-import { Quotes } from './clientjs/quotes.js';
-//var clockWidget = require(__dirname + '/clientjs/clock.js');
-
-//var configuration = require('./clientjs/configuration.js');
+import fs from 'fs';
 import './clientjs/configuration.js';
-
-
-
+import { Widget } from './clientjs/widget.js';
+import { Quotes } from './clientjs/quotes.js';
+import { Clock } from './clientjs/clock.js';
 var widgets = [];
-var updater = [];
 var locations = [];
+var widgetNames = [];
+
+function loadWidgets() {
+  //Load Widgets here
+  widgets.push(new Clock());
+  widgets.push(new Quotes());
+
+  //default locations until configuration is working
+  locations["clock"]="region-top-center";
+  locations["quotes"]="region-bottom-center";
+
+  //build widget name list for ipc passing
+  for (var i = 0; i < widgets.length; i++) {
+    widgetNames.push(widgets[i].name);
+  }
+  console.log(widgetNames);
+  ipcRenderer.send('widget-load', widgetNames);
+}
+loadWidgets();
+
+const testFolder = './';
+fs.readdir(testFolder, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+})
+
 var minRate = 500;
 var maxRate = 500;
 var curRefresh = 0;
@@ -29,6 +48,7 @@ var curRefresh = 0;
 var settingsWindow = null;
 var settingsEl = document.querySelector('.settings');
 settingsEl.addEventListener('click', function () {
+    console.log("[INFO] Openning settings");
     ipcRenderer.send('open-settings-window');
 });
 
@@ -42,19 +62,6 @@ var appDir = jetpack.cwd(app.getAppPath());
 console.log('The author of this app is:', appDir.read('package.json', 'json').author);
 
 document.addEventListener('DOMContentLoaded', function () {
-    //document.getElementById('greet').innerHTML = greet();
-    //document.getElementById('platform-info').innerHTML = os.platform();
-    //document.getElementById('env-name').innerHTML = env.name;
-    //load widgets into config
-    widgets.push(new Clock());
-    //locations.push("region-top-center");
-    locations["clock"]="region-top-center";
-    //widgets.push(new XKCD());
-    //locations.push("region-middle-center");
-    widgets.push(new Quotes());
-    locations["quotes"]="region-bottom-center";
-    //locations.push("region-bottom-center");
-
     for (var i = 0; i < widgets.length; i++) {
         //widgets[i].setup("region-top-center");
         widgets[i].setup(locations[widgets[i].name]);

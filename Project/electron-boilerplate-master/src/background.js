@@ -18,11 +18,14 @@ import env from './env';
 
 var mainWindow;
 var settingsWindow;
+var widgetNames;
 
+//open settings window. requires renderer call
 ipcMain.on('open-settings-window', function () {
     if (settingsWindow) {
         return;
     }
+    setApplicationMenu();
 
     settingsWindow = createWindow( 'settings', {
         frame: true,
@@ -39,13 +42,30 @@ ipcMain.on('open-settings-window', function () {
     settingsWindow.on('close', function () {
         settingsWindow = null;
     });
+    if (env.name === 'development') {
+        settingsWindow.openDevTools();
+    }
+    /*mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'settings.html'),
+        protocol: 'file:',
+        slashes: true
+    }));*/
+    //mainWindow.
+    settingsWindow.webContents.send( 'send-widget-list', widgetNames );
 });
 
+//close settings window. Requires renderer call
 ipcMain.on('close-settings-window', function () {
     console.log("[DEBUG] Closing settings");
-    if (settingsWindow != null) {
+    /*if (settingsWindow != null) {
         settingsWindow.close();
-    }
+    }*/
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'app.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+
 });
 
 
@@ -68,7 +88,7 @@ if (env.name !== 'production') {
 app.on('ready', function () {
     setApplicationMenu();
 
-    var mainWindow = createWindow('main', {
+    mainWindow = createWindow('main', {
         width: 1000,
         height: 600
     });
@@ -86,4 +106,9 @@ app.on('ready', function () {
 
 app.on('window-all-closed', function () {
     app.quit();
+});
+
+ipcMain.on("widget-load", function(event, arg) {
+    console.log(arg);
+    widgetNames = arg;
 });

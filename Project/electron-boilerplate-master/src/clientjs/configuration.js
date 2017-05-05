@@ -1,6 +1,10 @@
 'use strict';
 
-var nconf = require('nconf').file({file: getUserHome() + '/smartmirror-config.json'});
+import { nconf } from 'nconf';
+import os from 'os';
+import file from 'file';
+
+var conf = require('nconf').file({file: getUserHome() + '/smartmirror-config.json'});
 //var nconf = nodeRequire('nconf').file({file: getUserHome() + '/smartmirror-config.json'});
 
 function saveSettings(settingKey, settingValue) {
@@ -14,7 +18,8 @@ function readSettings(settingKey) {
 }
 
 function getUserHome() {
-    return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+    //return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+    return os.homedir();
 }
 
 module.exports = {
