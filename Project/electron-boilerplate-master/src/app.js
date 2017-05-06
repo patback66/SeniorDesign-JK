@@ -10,7 +10,7 @@ import env from './env';
 import fs from 'fs';
 import './clientjs/configuration.js';
 import { Widget } from './clientjs/widget.js';
-import { RSS } from './clientjs/XKCD.js';
+import { RSS } from './clientjs/RSS.js';
 import { Weather } from './clientjs/weather.js';
 import { Quotes } from './clientjs/quotes.js';
 import { Clock } from './clientjs/clock.js';
