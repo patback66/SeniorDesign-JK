@@ -33,7 +33,12 @@
     "node-feedparser":"^1.0.1",
     "request":"^2.81.0",
     "nconf":"^0.8.4",
-    "file":"^0.2.2"
+    "file":"^0.2.2",
+    "body-parser": "~1.12.4",
+    "debug": "~2.2.0",
+    "express": "~4.12.4",
+    "node-storage": "0.0.7",
+    "node-uuid": "1.4.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
