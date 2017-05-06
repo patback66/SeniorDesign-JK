@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     //var update = setInterval(doRefresh,minRate);
     //updater.push(update);
-    console.log(updater);
+    //console.log(updater);
 });
 
 function doRefresh(index) {
