@@ -29,7 +29,7 @@ function loadWidgets() {
   locations["clock"]="region-top-center";
   locations["quotes"]="region-bottom-center";
   locations["weather"]="region-top-right";
-  locations["RSS"]="region-middle-center";
+  locations["RSS"]="region-middle";
 
   //build widget name list for ipc passing
   for (var i = 0; i < widgets.length; i++) {
