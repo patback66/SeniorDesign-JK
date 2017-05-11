@@ -17,7 +17,7 @@ export class Quotes extends Widget {
                    "Hello world",
                    "Hi there :)",
                    "Greetings",
-                   "O hai"];
+                   "Hello Senior Design Judges"];
   }
 
   /*

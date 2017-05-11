@@ -14,6 +14,7 @@ import { RSS } from './clientjs/RSS.js';
 import { Weather } from './clientjs/weather.js';
 import { Quotes } from './clientjs/quotes.js';
 import { Clock } from './clientjs/clock.js';
+//import { Hello } from './clientjs/hello.js';
 var widgets = [];
 var locations = [];
 var widgetNames = [];
@@ -24,6 +25,7 @@ function loadWidgets() {
   widgets.push(new Quotes());
   widgets.push(new RSS());
   widgets.push(new Weather());
+  //widgets.push(new Hello());
 
   //default locations until configuration is working
   locations["clock"]="region-top-center";

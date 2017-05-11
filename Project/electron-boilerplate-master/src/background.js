@@ -11,6 +11,7 @@ import { editMenuTemplate } from './menu/edit_menu_template';
 import createWindow from './helpers/window';
 import './clientjs/configuration.js';
 import os from 'os';
+var Alexa = require('alexa-sdk');
 
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
@@ -90,7 +91,7 @@ app.on('ready', function () {
 
     mainWindow = createWindow('main', {
         width: 1000,
-        height: 600
+        height: 600,
     });
 
     mainWindow.loadURL(url.format({
@@ -116,7 +117,7 @@ ipcMain.on("widget-load", function(event, arg) {
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var auth = require('./authentication.js');
+//var auth = require('./authentication.js');
 
 var avs_app = express();
 avs_app.use(bodyParser.json());

@@ -6,6 +6,7 @@
  */
 export class Widget {
   constructor() {
+    //super(); //should be called in a new widget
     this.isfull = false;
     this.name = "hello_world";
     this.myWindow;
@@ -18,7 +19,8 @@ export class Widget {
    * the constructor but before the main loop.
    */
   setup(location){
-    return "hi";
+    this.location = location;
+
   }
 
   /*
@@ -27,7 +29,9 @@ export class Widget {
    *
    */
   loop() {
-    console.log("loop called");
+    var element = document.getElementById(this.location);
+    var elementHTML = "";
+    element.innerHTML = elementHTML;
   }
 
   getname(){

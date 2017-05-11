@@ -31,8 +31,7 @@ export class RSS extends Widget {
                            //console.log(xmlDoc.getElementsByTagName("description")[1].childNodes[0].nodeValue);
         temp.innerHTML = "<h1>" + xmlDoc.getElementsByTagName("title")[1].childNodes[0].nodeValue + "</h1><br />"
           + xmlDoc.getElementsByTagName("description")[1].childNodes[0].nodeValue;
-	temp.style.display="block";
-	temp.style.margin="auto";
+
       }
    };
    xhttp.open("GET", "https://xkcd.com/rss.xml", true);
