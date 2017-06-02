@@ -19,7 +19,7 @@ fs.readdir(testFolder, (err, files) => {
 //import 'src/clientjs/configuration.js';
 //import '/src/clientjs/widgetLoader.js';
 //import './src/clientjs/widgetLoader.js'; //use require when built to /app
-import 'clientjs/widgetLoader.js';
+//import 'clientjs/widgetLoader.js';
 
 var conf = require('nconf').file({file: getUserHome() + '/smartmirror-config.json'});
 //var nconf = nodeRequire('nconf').file({file: getUserHome() + '/smartmirror-config.json'});
@@ -89,7 +89,6 @@ function loadWidgetNames() {
 loadWidgetNames();
 
 function bindSelectBoxes(e) {
-    debugger;
     var shortcutKeys = readSettings('widget-placement');
     var modifierKey = e.target.attributes['data-modifier-key'].value;
 

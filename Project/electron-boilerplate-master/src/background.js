@@ -115,7 +115,7 @@ ipcMain.on("widget-load", function(event, arg) {
 });
 
 var express = require('express');
-var path = require('path');
+//var path = require('path');
 var bodyParser = require('body-parser');
 //var auth = require('./authentication.js');
 

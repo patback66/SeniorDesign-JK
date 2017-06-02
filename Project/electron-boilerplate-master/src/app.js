@@ -14,11 +14,14 @@ import { RSS } from './clientjs/RSS.js';
 import { Weather } from './clientjs/weather.js';
 import { Quotes } from './clientjs/quotes.js';
 import { Clock } from './clientjs/clock.js';
-//import { Hello } from './clientjs/hello.js';
+import { Hello } from './clientjs/hello.js';
 var widgets = [];
 var locations = [];
 var widgetNames = [];
 
+/**
+ * Loads all widgets and sets their location for the handler.
+ */
 function loadWidgets() {
   //Load Widgets here
   widgets.push(new Clock());
@@ -42,12 +45,12 @@ function loadWidgets() {
 }
 loadWidgets();
 
-const testFolder = './';
+/*const testFolder = './';
 fs.readdir(testFolder, (err, files) => {
   files.forEach(file => {
     console.log(file);
   });
-})
+})*/
 
 var minRate = 500;
 var maxRate = 500;
@@ -69,6 +72,7 @@ var appDir = jetpack.cwd(app.getAppPath());
 // here files like it is node.js! Welcome to Electron world :)
 console.log('The author of this app is:', appDir.read('package.json', 'json').author);
 
+// Load the widgets once the HTML page has loaded.
 document.addEventListener('DOMContentLoaded', function () {
     for (var i = 0; i < widgets.length; i++) {
         //widgets[i].setup("region-top-center");
