@@ -1,0 +1,166 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage, graphicx, url}
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0ex}
+\title{\{Widget\} Widget provides functionality for an html widget.}
+\begin{document}
+\section*{\includegraphics[scale=1]{../assets/css/logo.png} }
+\emph{API Docs for: }
+\subsection*{APIs}
+\begin{itemize}
+\item Classes
+\item Modules
+
+\end{itemize}
+\begin{itemize}
+\item \{Widget\} Widget provides functionality for an html widget.
+
+\end{itemize}
+\begin{itemize}
+
+\end{itemize}
+ Show:  Inherited  Protected  Private  Deprecated \section*{\{Widget\} Widget provides functionality for an html widget. Class}
+ Defined in: clientjs/widget.js:2
+
+ Extend the widget class to create a new widget
+\subsection*{Constructor}
+\subsubsection*{\{Widget\} Widget provides functionality for an html widget.}
+()
+
+  Defined in clientjs/widget.js:2
+\begin{itemize}
+\item Index
+\item Methods
+
+\end{itemize}
+\subsection*{Item Index}
+\subsubsection*{Methods}
+\begin{itemize}
+\item close
+\item display
+\item getname
+\item getRefresh
+\item loop
+\item open
+\item setLocation
+\item setRefresh
+\item setup
+
+\end{itemize}
+\subsection*{Methods}
+\subsubsection*{close}
+()
+
+  Defined in clientjs/widget.js:51
+
+
+ [WIP] Closes a widget that has been fullscreened. Remember to close else you have 3 million pages open
+\subsubsection*{display}
+()  String 
+
+  Defined in clientjs/widget.js:79
+
+
+ [WIP] Gets the widget's display status
+\textbf{Returns:}
+String: 
+
+ Gives the widget display status
+\subsubsection*{getname}
+()  String 
+
+  Defined in clientjs/widget.js:42
+
+
+ Returns the widget's name as a string
+\textbf{Returns:}
+String: 
+
+ returns the widget's name, as defined by this.name
+\subsubsection*{getRefresh}
+()  Number 
+
+  Defined in clientjs/widget.js:93
+
+
+ Gets the widget's refresh rate in milliseconds.
+\textbf{Returns:}
+Number: 
+
+ Returns the widget's refresh rate
+\subsubsection*{loop}
+()
+
+  Defined in clientjs/widget.js:31
+
+
+ Loop is called periodically based on this.refresh. Updates to the widget should be performed here.
+\subsubsection*{open}
+()
+
+  Defined in clientjs/widget.js:111
+
+
+ [WIP] Fullscreens a widget using a new window.
+\subsubsection*{setLocation}
+(\begin{itemize}
+\item location
+
+\end{itemize}
+)
+
+  Defined in clientjs/widget.js:70
+
+
+ Set the location id for the widget.
+\textbf{Parameters:}
+\begin{itemize}
+\item location String\begin{itemize}
+\item the div id for the widget to be placed in.
+
+\end{itemize}
+
+
+\end{itemize}
+\subsubsection*{setRefresh}
+(\begin{itemize}
+\item rate
+
+\end{itemize}
+)
+
+  Defined in clientjs/widget.js:102
+
+
+ Sets the refresh rate for the widget in milliseconds.
+\textbf{Parameters:}
+\begin{itemize}
+\item rate Number\begin{itemize}
+\item the time in milliseconds between calls to loop
+
+\end{itemize}
+
+
+\end{itemize}
+\subsubsection*{setup}
+(\begin{itemize}
+\item location
+
+\end{itemize}
+)
+
+  Defined in clientjs/widget.js:20
+
+
+ Setup is called once at the instantiation. Use for code that must run after the constructor but before the main loop.
+\textbf{Parameters:}
+\begin{itemize}
+\item location String\begin{itemize}
+\item a string to specify the id of the div location for the widget
+
+\end{itemize}
+
+
+\end{itemize}
+
+\end{document}

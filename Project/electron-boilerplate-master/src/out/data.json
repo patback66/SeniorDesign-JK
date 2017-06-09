@@ -1,0 +1,418 @@
+{
+    "project": {},
+    "files": {
+        "clientjs/widget.js": {
+            "name": "clientjs/widget.js",
+            "modules": {},
+            "classes": {
+                "{Widget} Widget provides functionality for an html widget.": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "app.js": {
+            "name": "app.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "authentication.js": {
+            "name": "authentication.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "background.js": {
+            "name": "background.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "{Widget} Widget provides functionality for an html widget.": {
+            "name": "{Widget} Widget provides functionality for an html widget.",
+            "shortname": "{Widget} Widget provides functionality for an html widget.",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "clientjs/widget.js",
+            "line": 2,
+            "description": "Extend the widget class to create a new widget",
+            "is_constructor": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "clientjs/widget.js",
+            "line": 8,
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 20,
+            "description": "Setup is called once at the instantiation. Use for code that must run after\nthe constructor but before the main loop.",
+            "itemtype": "method",
+            "name": "setup",
+            "params": [
+                {
+                    "name": "location",
+                    "description": "- a string to specify the id of the div location for the widget",
+                    "type": "String"
+                }
+            ],
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 31,
+            "description": "Loop is called periodically based on this.refresh. Updates to the widget\nshould be performed here.",
+            "itemtype": "method",
+            "name": "loop",
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 42,
+            "description": "Returns the widget's name as a string",
+            "itemtype": "method",
+            "name": "getname",
+            "return": {
+                "description": "returns the widget's name, as defined by this.name",
+                "type": "String"
+            },
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 51,
+            "description": "[WIP] Closes a widget that has been fullscreened.\nRemember to close else you have 3 million pages open",
+            "itemtype": "method",
+            "name": "close",
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 70,
+            "description": "Set the location id for the widget.",
+            "itemtype": "method",
+            "name": "setLocation",
+            "params": [
+                {
+                    "name": "location",
+                    "description": "- the div id for the widget to be placed in.",
+                    "type": "String"
+                }
+            ],
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 79,
+            "description": "[WIP] Gets the widget's display status",
+            "itemtype": "method",
+            "name": "display",
+            "return": {
+                "description": "Gives the widget display status",
+                "type": "String"
+            },
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 93,
+            "description": "Gets the widget's refresh rate in milliseconds.",
+            "itemtype": "method",
+            "name": "getRefresh",
+            "return": {
+                "description": "Returns the widget's refresh rate",
+                "type": "Number"
+            },
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 102,
+            "description": "Sets the refresh rate for the widget in milliseconds.",
+            "itemtype": "method",
+            "name": "setRefresh",
+            "params": [
+                {
+                    "name": "rate",
+                    "description": "- the time in milliseconds between calls to loop",
+                    "type": "Number"
+                }
+            ],
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "clientjs/widget.js",
+            "line": 111,
+            "description": "[WIP] Fullscreens a widget using a new window.",
+            "itemtype": "method",
+            "name": "open",
+            "class": "{Widget} Widget provides functionality for an html widget."
+        },
+        {
+            "file": "app.js",
+            "line": 22,
+            "description": "Loads all widgets and sets their location for the handler.\nAvailable locations are:\n - region-top\n - region-top-left\n - region-top-center\n - region-top-right\n - region-middle\n - region-middle-left\n - region-middle-center\n - region-middle-right\n - region-bottom\n - region-bottm-left\n - region-bottom-center\n - region-bottom-right",
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 25,
+            "description": "Create an error object to return to the user.",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the error."
+                },
+                {
+                    "name": "msg",
+                    "description": "The message associated with the error."
+                },
+                {
+                    "name": "status",
+                    "description": "The HTTP status code for the error."
+                }
+            ],
+            "return": {
+                "description": "The error."
+            },
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 41,
+            "description": "Create an object of relevant LWA HTTP request information.",
+            "params": [
+                {
+                    "name": "urlPath",
+                    "description": "The LWA host."
+                }
+            ],
+            "return": {
+                "description": "LWA HTTP request information."
+            },
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 60,
+            "description": "Redirect the user to the LWA page to authenticate.",
+            "params": [
+                {
+                    "name": "deviceInfo",
+                    "description": "Device information including productId and dsn."
+                },
+                {
+                    "name": "regCode",
+                    "description": "The regCode passed in from the user."
+                },
+                {
+                    "name": "res",
+                    "description": "The HTTP response object."
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 84,
+            "description": "Determine if the user provided productId and dsn match the known map.",
+            "params": [
+                {
+                    "name": "productId",
+                    "description": "The productId."
+                },
+                {
+                    "name": "dsn",
+                    "description": "The dsn."
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 103,
+            "description": "Generate a registration code for a device, and map it to the device.\n\nThe registration code is used by the user as a key to know what device to associate tokens with.",
+            "params": [
+                {
+                    "name": "productId",
+                    "description": "The productId."
+                },
+                {
+                    "name": "dsn",
+                    "description": "The dsn."
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback(err, json) to return data to the user."
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 157,
+            "description": "Get an accessToken associated with the sessionId.\n\nMakes a request to LWA to get accessToken given the stored refreshToken.",
+            "params": [
+                {
+                    "name": "sessionId",
+                    "description": "The sessionId for this device."
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback(err, json) to return data to the user."
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 233,
+            "description": "Redirects the user to the LWA login page to enter their username and password.",
+            "params": [
+                {
+                    "name": "regCode",
+                    "description": "The registration code that was presented to the user and maps their request to the device that generated the registration code."
+                },
+                {
+                    "name": "res",
+                    "description": "The HTTP response object."
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback(err, json) to return data to the user."
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "authentication.js",
+            "line": 251,
+            "description": "Performs the initial request for refreshToken and saves the refreshToken in disk after the user has logged in and redirected to /authresponse.",
+            "params": [
+                {
+                    "name": "authCode",
+                    "description": "The authorization code that was included in the redirect from LWA."
+                },
+                {
+                    "name": "stateCode",
+                    "description": "The state code that we use to map a redirect from LWA back to device information."
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback(err, json) to return data to the user."
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "background.js",
+            "line": 125,
+            "description": "The endpoint for the device to request a registration code to then show to the user.",
+            "class": ""
+        },
+        {
+            "file": "background.js",
+            "line": 148,
+            "description": "The endpoint for the device to request a new accessToken when the previous one expires.",
+            "class": ""
+        },
+        {
+            "file": "background.js",
+            "line": 171,
+            "description": "The endpoint for the customer to visit and get redirected to LWA to login.",
+            "class": ""
+        },
+        {
+            "file": "background.js",
+            "line": 183,
+            "description": "The endpoint that LWA will redirect to to include the authorization code and state code.",
+            "class": ""
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " authentication.js:25"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " authentication.js:41"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " authentication.js:84"
+        },
+        {
+            "message": "Missing item type",
+            "line": " clientjs/widget.js:8"
+        },
+        {
+            "message": "Missing item type\nLoads all widgets and sets their location for the handler.\nAvailable locations are:\n - region-top\n - region-top-left\n - region-top-center\n - region-top-right\n - region-middle\n - region-middle-left\n - region-middle-center\n - region-middle-right\n - region-bottom\n - region-bottm-left\n - region-bottom-center\n - region-bottom-right",
+            "line": " app.js:22"
+        },
+        {
+            "message": "Missing item type\nCreate an error object to return to the user.",
+            "line": " authentication.js:25"
+        },
+        {
+            "message": "Missing item type\nCreate an object of relevant LWA HTTP request information.",
+            "line": " authentication.js:41"
+        },
+        {
+            "message": "Missing item type\nRedirect the user to the LWA page to authenticate.",
+            "line": " authentication.js:60"
+        },
+        {
+            "message": "Missing item type\nDetermine if the user provided productId and dsn match the known map.",
+            "line": " authentication.js:84"
+        },
+        {
+            "message": "Missing item type\nGenerate a registration code for a device, and map it to the device.\n\nThe registration code is used by the user as a key to know what device to associate tokens with.",
+            "line": " authentication.js:103"
+        },
+        {
+            "message": "Missing item type\nGet an accessToken associated with the sessionId.\n\nMakes a request to LWA to get accessToken given the stored refreshToken.",
+            "line": " authentication.js:157"
+        },
+        {
+            "message": "Missing item type\nRedirects the user to the LWA login page to enter their username and password.",
+            "line": " authentication.js:233"
+        },
+        {
+            "message": "Missing item type\nPerforms the initial request for refreshToken and saves the refreshToken in disk after the user has logged in and redirected to /authresponse.",
+            "line": " authentication.js:251"
+        },
+        {
+            "message": "Missing item type\nThe endpoint for the device to request a registration code to then show to the user.",
+            "line": " background.js:125"
+        },
+        {
+            "message": "Missing item type\nThe endpoint for the device to request a new accessToken when the previous one expires.",
+            "line": " background.js:148"
+        },
+        {
+            "message": "Missing item type\nThe endpoint for the customer to visit and get redirected to LWA to login.",
+            "line": " background.js:171"
+        },
+        {
+            "message": "Missing item type\nThe endpoint that LWA will redirect to to include the authorization code and state code.",
+            "line": " background.js:183"
+        }
+    ]
+}
